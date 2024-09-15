@@ -1,0 +1,21 @@
+
+<div class="pagination">
+                {% if objects.has_previous %}
+                <li class="active"><a href='{% url "blogs_page" objects.previous_page_number %}'> < </a></li>
+                {% else %}
+                <li><span> < </span></li>
+                {% endif %}
+                {% for i in objects.paginator.page_range %}
+                     {% if objects.number == i %}
+                     <li class="active"><a href="{% url 'blogs_page' 1 %}"><span>{{ i }}</span></a></li>
+                {% else %}
+                <li><a href="{% url 'blogs_page' i %}">{{ i }}</a></li>
+                 {% endif %}
+                {% endfor %}
+
+                 {% if objects.has_next %}
+                <li class="active"><a href="{% url 'blogs_page' objects.next_page_number %}"> > </a></li>
+                 {% else %}
+                <li><a href="#"> > </a></li>
+                {% endif %}
+</div>

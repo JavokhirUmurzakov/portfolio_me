@@ -1,0 +1,105 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Portfolio | Projects </title>
+	<link rel="icon" type="image/x-icon" href="{% static 'img/icon.png' %}">
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="{% static 'js/hover.zoom.js' %}"></script>
+    <script src="{% static 'js/hover.zoom.conf.js' %}"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <a class="navbar-brand" href="{% url 'home_page' %}"><b style="color:blue;">Javohir</b></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="{% url 'work_page' %}"><b>Projects</b></a></li>
+            <li><a href="{% url 'about_page' %}"><b>About</b></a></li>
+            <li><a href="{% url 'blogs_page' 1 %}"><b>Blog</b></a></li>
+            <li><a href="{% url 'contact_page' %}"><b>Contact</b></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	
+	
+	<!-- +++++ Projects Section +++++ -->
+	
+	<div class="container pt">
+		<div class="row mt">
+			<div class="col-lg-6 col-lg-offset-3">
+				<p><img src="{% static 'img/user12.png' %}" width="50px" height="50px"> <ba>{{project_one.author}}</ba></p>
+					<p><bd>{{project_one.created_time}}</bd></p>
+				<h3>{{project_one.name}}</h3>
+				<p><img class="img-responsive" src="{{project_one.image.url}}" alt="" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"></p>
+				<hr>
+				<p>{{project_one.text | safe }}</p>
+			</div>
+		</div>
+		<div class="row mt centered">	
+			<div class="col-lg-8 col-lg-offset-2">
+<!--				<p><img class="img-responsive" src="{% static 'img/portfolio/2.jpg' %}" alt=""></p>-->
+<!--				<p><img class="img-responsive" src="{% static 'img/portfolio/3.jpg' %}" alt=""></p>-->
+			</div>
+		</div><!-- /row -->
+	</div><!-- /container -->
+	
+	
+	<!-- +++++ Footer Section +++++ -->
+	
+	<div id="footer" style="margin:0 auto;">
+		<div class="container" style="margin:0 auto;">
+			<div class="row" style="margin:0 auto;">
+				<div class="col-lg-4" style="margin-left:40px;margin-top:40px;">
+					<p><a href="https://github.com/JavokhirUmurzakov"><i class="fa fa-github"  style="font-size:24px"></i>  Github</a></p><br/>
+					<p><a href="https://t.me/umurzakov_javokhir"><i class="fa fa-telegram"  style="font-size:24px"></i>  Telegram</a></p><br/>
+					<p><a href="https://instagram.com/umurzakov_javokhir"><i class="fa fa-instagram"  style="font-size:24px"></i>  Instagram</a></p><br/>
+					<p><a href="https://linkedin.com/in/javokhir-umurzakov"><i class="fa fa-linkedin-square"  style="font-size:24px"></i>  Linkedin</a></p><br/>
+				</div><!-- /col-lg-4 -->
+				<div class="col-lg-4" style="padding-right:15px;">
+					<p align="justify" style="margin-top:40px;margin-right:40px;">Improving application performance by optimizing Python code and implementing best practices.</p>
+					<p align="justify" style="margin-top:40px;margin-right:40px;">Collaborating with cross-functional teams to design, develop, and implement high-quality Python applications</p>
+				</div><!-- /col-lg-4 -->
+
+			</div>
+
+		</div>
+	</div>
+	
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  </body>
+</html>
